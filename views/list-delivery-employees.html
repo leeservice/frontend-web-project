@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Employees</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    </head>
+    <body>
+        <header class="bg-dark text-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Employees</h1>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="container mt-4">
+            <section id="employees" class="mt-4">
+                <h2>Our Employees:</h2>
+                {% if employee and employee.length > 0 %}
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Salary</th>
+                            <th scope="col">Bank Account No</th>
+                            <th scope="col">National Insurance No</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for employee in employee %}
+                    <tr>
+                        <td>{{ employee.name }}</td>
+                        <td>{{ employee.salary }}</td>
+                        <td>{{ employee.bankAccountNo }}</td>
+                        <td>{{ employee.natInsuranceNo }}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                {% else %}
+                There are no employees.
+                {% endif %}
+            </section>
+        </main>
+    </body>
+</html>
