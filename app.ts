@@ -33,4 +33,3 @@ app.listen(3000, () => {
 });
 
 require('./controller/employeeController')(app);
-

@@ -1,7 +1,7 @@
-export class Employee {
-    employeeID: number
-    name: string
-    salary: number 
-    bankAccountNo: number
-    natInsuranceNo: number
+export class Employee{
+    employeeId?: number
+    name?: string
+    salary?: number
+    bankAccountNo?: string
+    natInsuranceNo?: string
 }
