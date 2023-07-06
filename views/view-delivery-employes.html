@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Employees</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    </head>
+    <body>
+        <header class="bg-dark text-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>{{ employee.name }}</employee></h1>    
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="container mt-4">
+            <section id="employee" class="mt-4">
+                {% if employee %}
+                <h2>Name</h2>
+                {{ employee.name }}
+                <h2>Salary</h2>
+                {{ employee.salary }}
+                <h2>Bank Account Number</h2>
+                {{ employee.bankAccountNo }} 
+                <h2>National Insurance Number</h2>
+                {{ employee.natInsuranceNo }}
+                {% else %}
+                Could not find employees.
+                {% endif %}
+            </section>
+        </main>
+    </body>
+</html>
+</html>
