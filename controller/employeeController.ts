@@ -52,4 +52,21 @@ module.exports = function(app : Application){
         
         res.render('add-employee')
     })
+
+    app.get('/update-employee/:id', async(req: Request, res: Response) => {
+        
+        res.render('update-employee')
+    })
+
+    app.put('/update-employee/:id', async(req: Request, res: Response) => {
+        let data: Employee = req.body
+
+        try {
+            data = await employeeService.updateEmployee(req.params.id)
+        } catch (e) {
+            console.error(e);
+        }
+
+        res.render('view-delivery-employes' + req.params.id)
+    })
 }

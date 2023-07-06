@@ -17,6 +17,7 @@ module.exports.createEmployee = async function(employee: Employee): Promise<numb
     }catch(e){
         throw new Error('Could not create employee')
     }
+}
 
 module.exports.getAllDeliveryEmployees = async function (): Promise<Employee[]> {
     try {
@@ -34,5 +35,22 @@ module.exports.getEmployeesById = async function (id: number): Promise<Employee>
         return response.data
     } catch (e) {
         throw new Error('Could not get employee')
+    }
+}
+
+module.exports.updateEmployee = async function (employee: Employee): Promise<Employee> {
+
+    const error:string = employeeValidator.validateEmployee(employee)
+
+    if(error){
+        throw new Error(error)
+    }
+
+    try {
+        const response = await axios.put('http://localhost:8080/api/employee/' + employee.employeeId)
+
+        return response.data
+    } catch (e) {
+        throw new Error('Could not update employee')
     }
 }
