@@ -16,7 +16,7 @@
             </div>
         </header>
         <main class="container mt-4">
-            <section id="employees" class="mt-4">
+            <section id="employee" class="mt-4">
                 <h2>Our Employees:</h2>
                 {% if employee and employee.length > 0 %}
                 <table class="table">
@@ -31,10 +31,13 @@
                     <tbody>
                         {% for employee in employee %}
                     <tr>
+                        <td style="display: none;">{{ employee.employeeId }}</td>
                         <td>{{ employee.name }}</td>
                         <td>{{ employee.salary }}</td>
                         <td>{{ employee.bankAccountNo }}</td>
                         <td>{{ employee.natInsuranceNo }}</td>
+                        
+                        <td><a href=" /employees/{{ employee.employeeId }} ">View</a></td>
                     </tr>
                     {% endfor %}
                     </tbody>
